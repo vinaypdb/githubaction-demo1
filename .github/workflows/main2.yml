@@ -1,4 +1,4 @@
-name: My first workflow 
+name: My second workflow 
 on: push
 jobs:
   firstjob:
@@ -6,7 +6,12 @@ jobs:
     steps:
       - name: Print greetings!
         run: echo "Hello All"
+  secondjob:
+    needs: firstjob
+    runs-on: ubuntu-latest 
+    steps: 
       - name: Run multiple commands 
         run: |
           echo "Hello Github"
-          echo "This is job2"
+          echo "This is job1"
+
